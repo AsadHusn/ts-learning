@@ -1,0 +1,14 @@
+number
+string
+boolean
+null
+undefined
+object
+
+=======
+
+any
+unknown
+never
+enum
+tuple
