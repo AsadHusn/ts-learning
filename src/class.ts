@@ -3,15 +3,17 @@ class Account {
   // public owner: string;
   // private _balance: number;
   nickname?: string;
+  private static _activeAccounts: number = 0;
 
+  // parameter properties
   constructor(
     readonly id: number,
     public owner: string,
     private _balance: number,
     nickname?: string
   ) {
-    console.log("nick = ", nickname);
     nickname && (this.nickname = nickname);
+    Account._activeAccounts++;
   }
 
   deposit(amount: number): void {
@@ -20,7 +22,7 @@ class Account {
   }
 
   private calculateTax() {
-    console.log("tax");
+    console.log("calculate tax");
   }
 
   get balance(): number {
@@ -30,6 +32,10 @@ class Account {
   set balance(value: number) {
     if (value < 0) throw new Error("Invalid value");
     this._balance = value;
+  }
+
+  static get activeAccounts(): number {
+    return Account._activeAccounts;
   }
 }
 
@@ -42,3 +48,5 @@ account.balance = 99;
 console.log(account);
 
 console.log(account instanceof Account);
+
+console.log("Count = ", Account.activeAccounts);
