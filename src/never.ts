@@ -11,7 +11,7 @@
     throw new Error(msg);
   }
 
-  reject("hellp");
+  reject("help!");
   // processEvents();
 
   // console.log("help!!");

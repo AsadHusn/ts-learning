@@ -1,5 +1,5 @@
 {
-  // unknown is used to display error
+  // unknown is used to display type errors if type is unknown
   function render(document: unknown) {
     // we can use it with narrowing
     if (typeof document === "string") {

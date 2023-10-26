@@ -1,5 +1,6 @@
 {
   function inchesToCm(inches: number | string) {
+    // narrowing the type
     if (typeof inches === "number") return inches * 2.54;
     else return parseInt(inches) * 2.54;
   }
